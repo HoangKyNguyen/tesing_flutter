@@ -26,7 +26,7 @@ class _FormLoginState extends State<FormLogin> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        automaticallyImplyLeading: false,
+        automaticallyImplyLeading: true,
         title: const Text("Login Page"),
         centerTitle: true,
         backgroundColor: Colors.black,

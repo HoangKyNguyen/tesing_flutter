@@ -8,7 +8,7 @@ void main() {
     MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Named Routes Demo',
-      initialRoute: '/login',
+      initialRoute: '/',
       routes: {
         '/': (context) => const FirstScreen(),
         '/second': (context) => const SecondScreen(),

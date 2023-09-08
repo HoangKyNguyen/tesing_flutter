@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:first_app/pages/screen_detail.dart';
-import 'package:first_app/models/flash_screen.dart';
+import 'package:first_app/models/splash_screen.dart';
 Future<List<User>> fetchUsers() async {
   final response = await http.get(Uri.parse('https://api.github.com/users'));
   if (response.statusCode == 200) {

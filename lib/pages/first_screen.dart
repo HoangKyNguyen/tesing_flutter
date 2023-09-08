@@ -21,7 +21,10 @@ class FirstScreen extends StatelessWidget {
               },
               child: const Text('Launch screen'),
             ),
-            SizedBox(width: 8), // Add some space between the buttons
+            SizedBox(width: 8),
+            TextButton(onPressed: (){
+               Navigator.pushNamed(context, '/login');
+            }, child: const Text("Go to Login")),
             const MyModal()
           ],
         ),
