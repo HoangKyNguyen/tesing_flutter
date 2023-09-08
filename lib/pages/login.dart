@@ -33,7 +33,7 @@ class _FormLoginState extends State<FormLogin> {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding:  EdgeInsets.symmetric(horizontal: 20, vertical: 60),
+          padding:  const EdgeInsets.symmetric(horizontal: 20, vertical: 60),
           child: Form(
             key: _formField,
             autovalidateMode: AutovalidateMode.onUserInteraction,
@@ -126,15 +126,14 @@ class _FormLoginState extends State<FormLogin> {
                     TextButton(
                         onPressed: (
 
-                        ){
+                            ){
 
-                    },
+                        },
                         child:const Text(
                           'Sign Up',
                           style: TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
-
                           ),
                         )
                     )
