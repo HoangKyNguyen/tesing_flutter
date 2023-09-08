@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:first_app/pages/modal_test.dart';
+import 'package:first_app/models/modal_test.dart';
 
 class FirstScreen extends StatelessWidget {
   const FirstScreen({super.key});
