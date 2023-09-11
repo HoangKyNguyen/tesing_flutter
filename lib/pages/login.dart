@@ -1,7 +1,25 @@
 import 'dart:convert';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:first_app/models/checked_button.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:google_sign_in/google_sign_in.dart';
+Future<UserCredential> signInWithGoogle() async {
+  // Trigger the authentication flow
+  final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+
+  // Obtain the auth details from the request
+  final GoogleSignInAuthentication? googleAuth = await googleUser?.authentication;
+
+  // Create a new credential
+  final credential = GoogleAuthProvider.credential(
+    accessToken: googleAuth?.accessToken,
+    idToken: googleAuth?.idToken,
+  );
+
+  // Once signed in, return the UserCredential
+  return await FirebaseAuth.instance.signInWithCredential(credential);
+}
 class FormLogin extends StatefulWidget {
   const FormLogin({super.key});
 
@@ -20,6 +38,9 @@ class _FormLoginState extends State<FormLogin> {
       headers: {'Content-Type': 'application/json'},
       body: jsonEncode({'email': emailController, 'password': passwordController}),
     );
+  }
+  void googleLogin(){
+
   }
 
   @override
@@ -137,8 +158,18 @@ class _FormLoginState extends State<FormLogin> {
                         ),
                       ),
                     ),
-                    const Expanded(
-                      child: MyCustomButton(),
+                     Expanded(
+                      child: Column(
+                        children: [
+                          const MyCustomButton(),
+                          IconButton(
+                            icon: Image.asset('lib/images/google.png'),
+                            onPressed: (){
+                              signInWithGoogle();
+                            },
+                          ),
+                        ],
+                      ),
                     ),
                   ],
                 ),
