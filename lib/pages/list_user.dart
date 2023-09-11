@@ -31,14 +31,14 @@ class User {
   }
 }
 
-class MyApp extends StatefulWidget {
-  const MyApp({super.key});
+class UserList extends StatefulWidget {
+  const UserList({super.key});
 
   @override
-  State<MyApp> createState() => _MyAppState();
+  State<UserList> createState() => _UserListState();
 }
 
-class _MyAppState extends State<MyApp> {
+class _UserListState extends State<UserList> {
   late bool isChecked = false;
   late Future<List<User>> futureUsers;
   @override

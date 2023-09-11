@@ -1,5 +1,5 @@
 import 'dart:convert';
-
+import 'package:first_app/models/checked_button.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 class FormLogin extends StatefulWidget {
@@ -113,30 +113,33 @@ class _FormLoginState extends State<FormLogin> {
                     ),
                   ),
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const Text(
-                      "Already have an account",
-                      style: TextStyle(
-                        fontSize: 17,
+                    const Expanded(
+                      child: Text(
+                        "Already have an account",
+                        style: TextStyle(
+                          fontSize: 17,
+                        ),
                       ),
                     ),
-                    TextButton(
-                        onPressed: (
-
-                            ){
-
-                        },
-                        child:const Text(
+                    Expanded(
+                      child: TextButton(
+                        onPressed: () {},
+                        child: const Text(
                           'Sign Up',
                           style: TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
                           ),
-                        )
-                    )
+                        ),
+                      ),
+                    ),
+                    const Expanded(
+                      child: MyCustomButton(),
+                    ),
                   ],
                 ),
               ],
