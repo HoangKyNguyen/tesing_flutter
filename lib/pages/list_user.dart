@@ -73,8 +73,37 @@ class _UserListState extends State<UserList> {
       home: SafeArea(
         child: Scaffold(
           appBar: AppBar(
-            title: const Text('Fetch Data Example'),
+            title: const Text('Fetch Data'),
             backgroundColor: Colors.pink,
+          ),
+          drawer: Drawer(
+            child: ListView(
+              padding: EdgeInsets.zero,
+              children: <Widget>[
+                const DrawerHeader(
+                  child: Text('Drawer Header'),
+                  decoration: BoxDecoration(
+                    color: Colors.pink,
+                  ),
+                ),
+                ListTile(
+                  title: const Text('Home Page'),
+                  onTap: () {
+                    // Update the state of the app.
+                    // Then close the drawer.
+                    Navigator.pushNamed(context, '/');
+                  },
+                ),
+                ListTile(
+                  title: const Text('get back'),
+                  onTap: () {
+                    // Update the state of the app.
+                    // Then close the drawer.
+                    Navigator.pop(context);
+                  },
+                ),
+              ],
+            ),
           ),
           body: Center(
             child: FutureBuilder<List<User>>(

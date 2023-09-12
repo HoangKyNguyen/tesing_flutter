@@ -5,7 +5,7 @@ import 'package:first_app/pages/first_screen.dart';
 import 'package:first_app/pages/second_screen.dart';
 import 'package:first_app/pages/list_user.dart';
 import 'package:provider/provider.dart';
-
+import 'package:first_app/pages/video_watching_test.dart';
 void main() {
   runApp(
     ChangeNotifierProvider(
@@ -13,12 +13,13 @@ void main() {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Named Routes Demo',
-        initialRoute: '/',
+        initialRoute: '/video',
         routes: {
           '/': (context) => const FirstScreen(),
           '/second': (context) => const SecondScreen(),
           '/list':(context) => const UserList(),
-          '/login':(context)=> const FormLogin(),
+          '/login':(context) => const FormLogin(),
+          '/video':(context) => const VideoPlayerScreen(),
         },
       ),
     ),
