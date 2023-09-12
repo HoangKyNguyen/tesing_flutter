@@ -41,6 +41,35 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
       appBar: AppBar(
         title: const Text('Butterfly Video'),
       ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: <Widget>[
+            const DrawerHeader(
+              child: Text('Drawer Header'),
+              decoration: BoxDecoration(
+                color: Colors.pink,
+              ),
+            ),
+            ListTile(
+              title: const Text('Home Page'),
+              onTap: () {
+                // Update the state of the app.
+                // Then close the drawer.
+                Navigator.pushNamed(context, '/');
+              },
+            ),
+            ListTile(
+              title: const Text('get back'),
+              onTap: () {
+                // Update the state of the app.
+                // Then close the drawer.
+                Navigator.pop(context);
+              },
+            ),
+          ],
+        ),
+      ),
       body: FutureBuilder(
         future: _initializeVideoPlayerFuture,
         builder: (context, snapshot) {
